@@ -70,7 +70,7 @@ public class Boss
     // Use this for initialization
     void Start()
     {
-        // 要素数53の配列を初期化する
+        // 要素数5の配列を初期化する
         int[] points = new int[53];
 
         // 配列の各要素に値を代入する
@@ -131,6 +131,8 @@ public class Test : MonoBehaviour
             lastboss.Attack();
             // 防御用の関数を呼び出す
             lastboss.Defence(5);
+            // 魔法用の関数を呼び出すs
+            lastboss.magic(53);
 
             // 消費前とと消費後の値を引いた値を返す関数
             int Add(int mp, int magic)

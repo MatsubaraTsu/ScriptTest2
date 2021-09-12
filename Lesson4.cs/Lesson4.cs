@@ -1,12 +1,9 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Boss
 {
-    // mpを53で初期化
-    int mp =  53;
 
     private int hp = 100;          // 体力
     private int power = 25; // 攻撃力
@@ -24,10 +21,12 @@ public class Boss
         // 残りhpを減らす
         this.hp -= damage;
     }
-   }
+
+}
 
 public class Lesson4 : MonoBehaviour
 {
+
     void Start()
     {
         // 要素数5の配列を初期化する
@@ -49,18 +48,20 @@ public class Lesson4 : MonoBehaviour
         {
             Debug.Log(array[b]);
         }
-        // Bossクラスの変数を宣言してインスタンスを代入
-        Boss lastboss = new Boss();
+        // Use this for initialization
+            
+            // Bossクラスの変数を宣言してインスタンスを代入
+            Boss lastboss = new Boss();
 
-        // 攻撃用の関数を呼び出す
-        lastboss.Attack();
-        // 防御用の関数を呼び出す
-        lastboss.Defence(3);
+            // 攻撃用の関数を呼び出す
+            lastboss.Attack();
+            // 防御用の関数を呼び出す
+            lastboss.Defence(3);
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-}

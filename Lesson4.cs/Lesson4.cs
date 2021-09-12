@@ -3,67 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using HelloWorld;
 
-namespace HelloWorld
-{
-    class Hello
-    {
-        static int hp, mp, exp_;
-        static int kizugusuri_kosuu;
-
-        static int battle()
-        {
-            Console.WriteLine("モンスターと戦闘中・・・  ");
-
-            hp = hp - 5;
-            Console.WriteLine("負傷した、 5のダメージ HPが5減った  ");
-            Console.WriteLine("HP = " + hp);
-
-            Console.WriteLine("魔法で攻撃する、MPが5減る  ");
-            mp = mp - 3;
-            Console.WriteLine("MP = " + mp);
-
-            Console.WriteLine("モンスターを倒した、 経験値を2ポイント獲得した");
-            exp_ = exp_ + 2;
-
-            return 0;
-        }
-
-        static int heal()
-        {
-            Console.WriteLine("傷薬で回復だ  \n");
-            hp = hp + 3;
-            Console.WriteLine("HP = " + hp);
-
-            Console.WriteLine("傷薬が1個減った  ");
-            kizugusuri_kosuu = kizugusuri_kosuu - 1;
-            Console.WriteLine("傷薬は残り " + kizugusuri_kosuu + "個。");
-
-            return 0;
-        }
-
-        static void Main()
-        {
-            hp = 30; mp = 25; exp_ = 0;
-            kizugusuri_kosuu = 10;
-
-            hp = 30; mp = 25; exp_ = 0;
-            kizugusuri_kosuu = 10;
-
-            Console.WriteLine("冒険を始めた、 最初のHPは" + hp + "、MPは" + mp + "。経験値は" + exp_);
-
-            Console.WriteLine("モンスターに遭遇した、 戦闘 ");
-            battle();
-            Console.WriteLine("戦闘終了後のHPは" + hp + "、残りMPは" + mp + "。経験値は" + exp_);
-
-            Console.WriteLine("回復アイテムを使用する  ");
-            heal();
-            Console.WriteLine("回復後のHPは" + hp + "。残りMPは" + mp + "。経験値は" + exp_);
-
-            Console.ReadKey();
-        }
-    }
-    public class Boss : BossBase
+public class Boss : BossBase
     {
 
         public class Lesson4 : MonoBehaviour
@@ -112,7 +54,7 @@ namespace HelloWorld
             }
 
             // mpを53で初期化する
-            int mp = V;
+            int hp = V;
             // 攻撃用の関数
             public void Attack()
             {
@@ -125,14 +67,14 @@ namespace HelloWorld
             {
                 Debug.Log(damage + "のダメージを受けた");
                 // 残りhpを減らす
-                this.mp -= damage;
+                this.hp -= damage;
             }
             // 魔力用の関数
             internal object magic(int v)
             {
 
                 // 残りmpを減らす
-                int v1 = this.mp - mp;
+                int v1 = this.hp - hp;
                 throw new NotImplementedException();
             }
         }
@@ -155,15 +97,14 @@ namespace HelloWorld
     public class Lesson4 : MonoBehaviour
     {
         private const int V = 53;
-        private const int V1 = 1;
+        private const int V1 = 5;
 
         void Start()
         {
-            // 10回繰り返す
-            for (int magic = 5 - V1; magic
-                                     >= 5; magic--)
+            //Magic関数を 11回呼び出す
+            for (int magic = 5; magic < 53; magic++)
             {
-                Debug.Log(message: magic + "魔法攻撃をした。残りのmpは○○。");
+                Debug.Log(magic + "魔法攻撃をした。残りのmpは○○。");
             }
 
             // Bossクラスの変数を宣言してインスタンスを代入
@@ -176,11 +117,10 @@ namespace HelloWorld
             // 魔力用の関数を呼び出す
             lastboss.magic(V);
 
-            // 1回処理を繰り返す
-            for (int mp = 5 - 1; mp >= 5; mp--)
+            //  Magic関数を1回呼び出す
+            for (int magic = 5; magic < 53; magic++)
             {
-                Debug.Log(mp + "MPが足りないため、魔法が使えない。");
+                Debug.Log(magic + "MPが足りないため、魔法が使えない");
             }
         }
     }
-}

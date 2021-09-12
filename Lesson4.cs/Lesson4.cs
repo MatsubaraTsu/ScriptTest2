@@ -102,7 +102,7 @@ public class Boss : BossBase
         void Start()
         {
             //Magic関数を 11回呼び出す
-            for (int magic = 5; magic < 53; magic++)
+            for (int magic = 5; magic < 5; magic++)
             {
                 Debug.Log(magic + "魔法攻撃をした。残りのmpは○○。");
             }
@@ -118,7 +118,7 @@ public class Boss : BossBase
             lastboss.magic(V);
 
             //  Magic関数を1回呼び出す
-            for (int magic = 5; magic < 53; magic++)
+            for (int magic = 5; magic < 5; magic++)
             {
                 Debug.Log(magic + "MPが足りないため、魔法が使えない");
             }

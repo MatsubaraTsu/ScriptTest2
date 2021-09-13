@@ -44,24 +44,24 @@ public class Lesson4 : MonoBehaviour
         {
             Debug.Log(array[i]);
         }
-        for (int b = 4; b < 0; b--)
+        for (int b = 4; b > -1; b--)
         {
             Debug.Log(array[b]);
         }
         // Use this for initialization
-            
-            // Bossクラスの変数を宣言してインスタンスを代入
-            Boss lastboss = new Boss();
 
-            // 攻撃用の関数を呼び出す
-            lastboss.Attack();
-            // 防御用の関数を呼び出す
-            lastboss.Defence(3);
-        }
+        // Bossクラスの変数を宣言してインスタンスを代入
+        Boss lastboss = new Boss();
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        // 攻撃用の関数を呼び出す
+        lastboss.Attack();
+        // 防御用の関数を呼び出す
+        lastboss.Defence(3);
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+}

@@ -44,7 +44,7 @@ public class Lesson4 : MonoBehaviour
         {
             Debug.Log(array[i]);
         }
-        for (int b = 4; b < 5; b--)
+        for (int b = 4; b < 0; b--)
         {
             Debug.Log(array[b]);
         }

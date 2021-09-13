@@ -54,9 +54,9 @@ public class Lesson4 : MonoBehaviour
         Boss lastboss = new Boss();
 
         // 攻撃用の関数を呼び出す
-        lastboss.Attack();
+       
         // 防御用の関数を呼び出す
-        lastboss.Defence(3);
+        
     }
 
     // Update is called once per frame
